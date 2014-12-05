@@ -55,19 +55,8 @@
         return total;
       }
 
-      $scope.getColor = function(){
-        var leftover = $scope.incompleteCount();
-        var itemlen = $scope.todo.items.length;
-
-        if(leftover >= itemlen-1){
-          return "label-danger";
-        }
-        if(leftover >= $scope.todo.items.length/2){
-          return "label-warning";
-        }
-        else{
-          return "label-success";
-        }
+      $scope.warningLevel = function(){
+        return $scope.incompleteCount() < 3 ? "label-success" : "label-warning";
       }
     });
 
@@ -77,7 +66,7 @@
 <body ng-controller="todoCtrl">
   <div class="page-header">
     <h1>{{todo.user}}'s todo list<br />
-    <span class="label " ng-class="getColor()" ng-hide="incompleteCount() == 0">items remaining: {{incompleteCount()}}</span>
+    <span class="label" ng-class="warningLevel()" ng-hide="incompleteCount() == 0">items remaining: {{incompleteCount()}}</span>
     </h1>
   </div>
   <div class="panel">
