@@ -10,17 +10,17 @@
 
     var model = {
       user: "rootscope",
-      items: [{ action: "Buy Flowers", done: false },
-        { action: "Get Shoes", done: false },
-        { action: "Collect Tickets", done: true },
-        { action: "Call Joe", done: false }]
+      money: 9999999,
+      items: [{ action: "get money", done: false },
+        { action: "get power", done: false },
+        { action: "get women", done: true },
+        { action: "get meaning of universe", done: false }]
     };
 
     var todoApp = angular.module("todoApp", []);
 
     todoApp.controller("todoCtrl", function($scope){
       $scope.todo = model;
-      console.error($scope.todo);
     });
   </script>
 </head>
@@ -43,12 +43,17 @@
         <tr>
           <th>Description</th>
           <th>Done</th>
+          <th>$</th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="item in todo.items">
           <td>{{item.action}}</td>
-          <td>{{item.done}}</td>
+          <td>
+            <input type="checkbox" ng-model="item.done" />
+            <!-- HTML: <input type="checkbox" checked /> - for true/false -->
+          </td>
+          <td>{{item.money}}</td>
         </tr>
       </tbody>
     </table>
