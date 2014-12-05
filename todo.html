@@ -5,6 +5,7 @@
   <title>todo app</title>
   <link href="bootstrap.css" rel="stylesheet" />
   <link href="bootstrap-theme.css" rel="stylesheet" />
+  <link href="css/todo.css" rel="stylesheet" />
   <script src="angular.js"></script>
   <script>
 
@@ -74,6 +75,7 @@
 </head>
 
 <body ng-controller="todoCtrl">
+  <div class="wtf">lol</div>
   <div class="page-header">
     <h1>{{todo.user}}'s todo list<br />
     <span class="label " ng-class="getColor()" ng-hide="incompleteCount() == 0">items remaining: {{incompleteCount()}}</span>
