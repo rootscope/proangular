@@ -9,7 +9,7 @@
   <script>
 
     var model = {
-      user: "Adam",
+      user: "rootscope",
       items: [{ action: "Buy Flowers", done: false },
         { action: "Get Shoes", done: false },
         { action: "Collect Tickets", done: true },
@@ -20,13 +20,16 @@
 
     todoApp.controller("todoCtrl", function($scope){
       $scope.todo = model;
-    }
+      console.error($scope.todo);
+    });
   </script>
 </head>
 
 <body ng-controller="todoCtrl">
   <div class="page-header">
-    <h1>rootscope's todo list</h1>
+    <h1>{{todo.user}}'s todo list
+    <span class="label label-default">{{todo.items.length}}</span>
+    </h1>
   </div>
   <div class="panel">
     <div class="input-group">
