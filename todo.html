@@ -17,10 +17,14 @@
     };
 
     var todoApp = angular.module("todoApp", []);
+
+    todoApp.controller("todoCtrl", function($scope){
+      $scope.todo = model;
+    }
   </script>
 </head>
 
-<body>
+<body ng-controller="todoCtrl">
   <div class="page-header">
     <h1>rootscope's todo list</h1>
   </div>
