@@ -1,2 +1,5 @@
 # log files
 *.log
+
+#package.json from node.js
+package.json
