@@ -1,8 +1,6 @@
-[
-  {action: "workout", done: true, val: 0},
-  {action: "get health", done: true, val: 0},
-  {action: "get money", done: false, val: 1000000000},
-  {action: "get power", done: false, val: 20000000000},
-  {action: "get women", done: false, val: 0},
-  {action: "get meaning of universe", done: false, val: "zen"}
-]
+[{"action": "workout", "done": true, "val": 0},
+ {"action": "get health", "done": true, "val": 0},
+ {"action": "get money", "done": false, "val": 1000000000},
+ {"action": "get power", "done": false, "val": 20000000000},
+ {"action": "get women", "done": false, "val": 0},
+ {"action": "get meaning of universe", "done": false, "val": "zen"}]
