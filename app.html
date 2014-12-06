@@ -13,7 +13,11 @@
   </div>
   <div class="panel panel-default row">
     <div class="col-xs-3">
-      Categories go here
+      <a class="btn btn-block btn-default btn-lg"
+         ng-click="selectCategory()">home</a>
+      <a class="btn btn-block btn-default btn-lg"
+         ng-repeat="cat in data.cats | orderBy:'breed' | unique:'breed'"
+         ng-click="selectCategory(cat)">{{cat}}</a>
     </div>
     <div class="col-xs-8">
       <div class="well" ng-repeat="cat in data.cats">
@@ -30,6 +34,7 @@
 
   <script src="libs/angular.js"></script>
   <script src="controllers/catapp.js"></script>
+  <script src="filters/customFilters.js"></script>
 </body>
 
 </html>

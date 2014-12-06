@@ -1,4 +1,4 @@
-angular.module("catApp", []);
+angular.module("catApp", ["customFilters"]);
 
 angular.module("catApp")
   .controller("catAppCtrl", function($scope) {
@@ -6,7 +6,7 @@ angular.module("catApp")
       cats: [{
         name: "cat #1",
         desc: "a standard cat",
-        breed: "shorthair",
+        breed: "persian",
         worth: 100
       },{
         name: "cat #2",
@@ -16,12 +16,12 @@ angular.module("catApp")
       },{
         name: "cat #3",
         desc: "a standard cat",
-        breed: "shorthair",
+        breed: "saimese",
         worth: 210
       },{
         name: "cat #4",
         desc: "a standard cat",
-        breed: "shorthair",
+        breed: "maine coon",
         worth: 202
       }]
     };
