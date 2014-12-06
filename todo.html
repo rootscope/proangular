@@ -11,23 +11,23 @@
 
     var model = {
       user: "rootscope",
-      money: 0,
-      items: [
-        {action: "workout", done: true, val: 0},
-        {action: "get yob", done: true, val: 10000},
-        {action: "get money", done: false, val: 1000000000},
-        {action: "get power", done: false, val: 20000000000},
-        {action: "get women", done: false, val: 0},
-        {action: "get meaning of universe", done: false, val: "zen"}]
+      money: 0
     };
 
     var todoApp = angular.module("todoApp", []);
+
+    todoApp.run(function($http){
+      $http.get("todo.json").success(function(data){
+        model.items = data;
+      });
+    });
 
     todoApp.filter("checkedItems", function(){
       return function (items, showComplete){
         var results = [];
         angular.forEach(items, function(item){
           if(item.done == false || showComplete == true){
+            console.log("pushing item :" + JSON.stringify(item));
             results.push(item);
           }
         });
@@ -72,14 +72,16 @@
       }
 
       $scope.successLevel = function(){
-        return $scope.calcMoney() > 2000000000 ? "label-success" : "label-danger";
+        return $scope.calcMoney() >= 1000000000 ? "label-success" : "label-danger";
       }
 
       $scope.addNewItem = function(actionText, money){
         if(!money){
           $scope.todo.items.push({action: actionText, done: false, val: 0});
         }
-        $scope.todo.items.push({action: actionText, done: false, val: parseInt(money)});
+        else{
+          $scope.todo.items.push({action: actionText, done: false, val: parseInt(money)});
+        }
       }
     });
 
@@ -93,13 +95,18 @@
     </h1>
   </div>
   <div class="panel">
+    <label>action</label>
     <div class="input-group">
       <input class="form-control" ng-model="actionText" />
-      <input class="form-control" ng-model="money" />
       <span class="input-group-btn">
-        <button class="btn btn-default" ng-click="addNewItem(actionText, money)">Add</button>
+        <button class="btn btn-primary" ng-click="addNewItem(actionText, money)">Add</button>
       </span>
     </div>
+    <div class="input-group">
+      <label>money</label>
+      <input class="form-control" ng-model="money" />
+    </div>
+    <hr />
     <table class="table table-striped">
       <thead>
         <tr>
@@ -121,7 +128,7 @@
         </tr>
       </tbody>
     </table>
-
+    <hr />
     <div class="checkbox-inline">
       <label><input type="checkbox" ng-model="showComplete"> Show Complete</label>
     </div>
