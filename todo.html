@@ -3,10 +3,10 @@
 
 <head>
   <title>todo app</title>
-  <link href="bootstrap.css" rel="stylesheet" />
-  <link href="bootstrap-theme.css" rel="stylesheet" />
+  <link href="libs/bootstrap.css" rel="stylesheet" />
+  <link href="libs/bootstrap-theme.css" rel="stylesheet" />
   <link href="css/todo.css" rel="stylesheet" />
-  <script src="angular.js"></script>
+  <script src="libs/angular.js"></script>
   <script>
 
     var model = {
@@ -27,7 +27,6 @@
         var results = [];
         angular.forEach(items, function(item){
           if(item.done == false || showComplete == true){
-            console.log("pushing item :" + JSON.stringify(item));
             results.push(item);
           }
         });
