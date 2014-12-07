@@ -18,6 +18,7 @@
          class="btn btn-block btn-default btn-lg">home</a>
       <a ng-repeat="cat in data.cats | orderBy:'breed' | unique:'breed'"
          ng-click="selectCategory(cat)"
+         ng-class="getCategoryClass(cat)"
          class="btn btn-block btn-default btn-lg">{{cat}}</a>
     </div>
     <div class="col-xs-8">
