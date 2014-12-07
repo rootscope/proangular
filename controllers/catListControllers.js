@@ -1,7 +1,7 @@
 angular.module("catApp")
 .constant("catListActiveClass", "btn-success")
 .constant("pageListActiveClass", "btn-success")
-.constant("catListPageCount", 3)
+.constant("catListPageCount", 5)
 .controller("catListCtrl", function($scope, $filter,
   catListActiveClass, pageListActiveClass, catListPageCount){
   var selectedCategory = null;
