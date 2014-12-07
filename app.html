@@ -23,7 +23,6 @@
        class="panel panel-default row">
     <div class="col-xs-3">
       <a ng-click="selectCategory()"
-         ng-class="getCategoryClass()"
          class="btn btn-block btn-default btn-lg">home
       </a>
       <a ng-repeat="cat in data.cats | orderBy:'breed' | unique:'breed'"
