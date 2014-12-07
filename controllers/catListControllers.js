@@ -14,6 +14,7 @@ angular.module("catApp")
   }
 
   $scope.selectPage = function(newPage){
+    console.log("newPage = ", newPage);
     $scope.selectedPage = newPage;
   }
 
@@ -27,4 +28,5 @@ angular.module("catApp")
 
   $scope.getPageClass = function(page){
     return $scope.selectedPage == page ? catListActiveClass : "";
+  }
 });
