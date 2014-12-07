@@ -15,6 +15,7 @@ angular.module("customFilters", [])
       console.log(results);
       return results;
     }else{
+      console.log(data);
       return data;
     }
   }

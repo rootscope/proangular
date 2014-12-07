@@ -11,16 +11,17 @@
   <div class="navbar navbar-inverse">
     <a class="navbar-brand" href="#">catapp</a>
   </div>
-  <div class="panel panel-default row">
+  <div ng-controller="catListCtrl"
+       class="panel panel-default row">
     <div class="col-xs-3">
-      <a class="btn btn-block btn-default btn-lg"
-         ng-click="selectCategory()">home</a>
-      <a class="btn btn-block btn-default btn-lg"
-         ng-repeat="cat in data.cats | orderBy:'breed' | unique:'breed'"
-         ng-click="selectCategory(cat)">{{cat}}</a>
+      <a ng-click="selectCategory()"
+         class="btn btn-block btn-default btn-lg">home</a>
+      <a ng-repeat="cat in data.cats | orderBy:'breed' | unique:'breed'"
+         ng-click="selectCategory(cat)"
+         class="btn btn-block btn-default btn-lg">{{cat}}</a>
     </div>
     <div class="col-xs-8">
-      <div class="well" ng-repeat="cat in data.cats">
+      <div class="well" ng-repeat="cat in data.cats | filter:categoryFilterFn">
         <h3>
           <strong>{{cat.name}}</strong>
           <span class="pull-right label label-primary">
@@ -35,6 +36,7 @@
   <script src="libs/angular.js"></script>
   <script src="controllers/catapp.js"></script>
   <script src="filters/customFilters.js"></script>
+  <script src="controllers/catListControllers.js"></script>
 </body>
 
 </html>

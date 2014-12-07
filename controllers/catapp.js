@@ -21,8 +21,14 @@ angular.module("catApp")
       },{
         name: "cat #4",
         desc: "a standard cat",
+        breed: "persian",
+        worth: 290
+      },{
+        name: "cat #5",
+        desc: "a standard cat",
         breed: "maine coon",
         worth: 202
       }]
     };
+
   });
