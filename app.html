@@ -22,7 +22,8 @@
          class="btn btn-block btn-default btn-lg">{{cat}}</a>
     </div>
     <div class="col-xs-8">
-      <div class="well" ng-repeat="cat in data.cats | filter:categoryFilterFn">
+      <div ng-repeat="cat in data.cats | filter:categoryFilterFn | range:selectedPage:pageSize"
+           class="well">
         <h3>
           <strong>{{cat.name}}</strong>
           <span class="pull-right label label-primary">
@@ -30,6 +31,12 @@
           </span>
         </h3>
         <span class="lead">{{cat.desc}}</span>
+      </div>
+      <div class="pull-right btn-group">
+        <a ng-repeat="page in data.cats | filter:categoryFilterFn | pageCount:pageSize"
+           ng-click="getPageClass($index + 1)">
+          {{$index + 1}}
+        </a>
       </div>
     </div>
   </div>
