@@ -23,7 +23,7 @@
          class="btn btn-block btn-default btn-lg">{{cat}}
       </a>
     </div>
-    <div class="col-xs-8">
+    <div class="col-xs-8 form-group">
       <div ng-repeat="cat in data.cats | filter:categoryFilterFn | range:selectedPage:pageSize"
            class="well">
         <h3>
