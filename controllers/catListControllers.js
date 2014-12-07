@@ -1,5 +1,5 @@
 angular.module("catApp")
-  .constant("catListActiveClass", "btn-primary")
+  .constant("catListActiveClass", "btn-success wtf")
   .constant("pageListActiveClass", "btn-success")
   .constant("catListPageCount", 3)
   .controller("catListCtrl", function($scope, $filter,
