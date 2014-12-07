@@ -1,33 +1,33 @@
 angular.module("catApp")
-.constant("catListActiveClass", "btn-primary")
-.constant("pageListActiveClass", "btn-success")
-.constant("catListPageCount", 3)
-.controller("catListCtrl", function($scope, $filter,
-  catListActiveClass, pageListActiveClass, catListPageCount){
-  var selectedCategory = null;
+  .constant("catListActiveClass", "btn-primary")
+  .constant("pageListActiveClass", "btn-success")
+  .constant("catListPageCount", 3)
+  .controller("catListCtrl", function($scope, $filter,
+    catListActiveClass, pageListActiveClass, catListPageCount){
+    var selectedCategory = null;
 
-  $scope.selectedPage = 1;
-  $scope.pageSize = catListPageCount;
-
-  $scope.selectCategory = function(newCategory){
-    selectedCategory = newCategory;
     $scope.selectedPage = 1;
-  }
+    $scope.pageSize = catListPageCount;
 
-  $scope.selectPage = function(newPage){
-    console.log("newPage = ", newPage);
-    $scope.selectedPage = newPage;
-  }
+    $scope.selectCategory = function(newCategory){
+      selectedCategory = newCategory;
+      $scope.selectedPage = 1;
+    }
 
-  $scope.categoryFilterFn = function(cat){
-    return selectedCategory == null || cat.breed == selectedCategory;
-  }
+    $scope.selectPage = function(newPage){
+      console.log("newPage = ", newPage);
+      $scope.selectedPage = newPage;
+    }
 
-  $scope.getCategoryClass = function(category){
-    return selectedCategory == category ? catListActiveClass : "";
-  }
+    $scope.categoryFilterFn = function(cat){
+      return selectedCategory == null || cat.breed == selectedCategory;
+    }
 
-  $scope.getPageClass = function(page){
-    return $scope.selectedPage == page ? pageListActiveClass : "";
-  }
-});
+    $scope.getCategoryClass = function(category){
+      return selectedCategory == category ? catListActiveClass : "";
+    }
+
+    $scope.getPageClass = function(page){
+      return $scope.selectedPage == page ? pageListActiveClass : "";
+    }
+  });
