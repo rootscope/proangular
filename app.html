@@ -11,7 +11,14 @@
   <div class="navbar navbar-inverse">
     <a class="navbar-brand" href="#">catapp</a>
   </div>
+
+  <div class="alert alert-danger" ng-show="data.error">
+    wtfff ({{data.error.status}}). the cat data blew up.
+    <a href="/app.html" class="alert-link">click here to try again</a>
+  </div>
+
   <div ng-controller="catListCtrl"
+       ng-hide="data.error">
        class="panel panel-default row">
     <div class="col-xs-3">
       <a ng-click="selectCategory()"
