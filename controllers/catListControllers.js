@@ -1,8 +1,9 @@
 angular.module("catApp")
 .constant("catListActiveClass", "btn-primary")
+.constant("pageListActiveClass", "btn-success")
 .constant("catListPageCount", 3)
 .controller("catListCtrl", function($scope, $filter,
-  catListActiveClass, catListPageCount){
+  catListActiveClass, pageListActiveClass, catListPageCount){
   var selectedCategory = null;
 
   $scope.selectedPage = 1;
@@ -27,6 +28,6 @@ angular.module("catApp")
   }
 
   $scope.getPageClass = function(page){
-    return $scope.selectedPage == page ? catListActiveClass : "";
+    return $scope.selectedPage == page ? pageListActiveClass : "";
   }
 });

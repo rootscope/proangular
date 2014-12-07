@@ -24,6 +24,7 @@ angular.module("customFilters", [])
       if(data.length < start_index){
         return [];
       }else{
+        console.log("limitTo: ", size);
         return $filter("limitTo")(data.splice(start_index), size);
       }
     }else{
