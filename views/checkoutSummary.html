@@ -1,4 +1,41 @@
-<div class="lead">
-  dis be the checkout summary view
+<div ng-controller="cartSummaryController">
+  <div class="alert alert-warning" ng-show="cartData.length == 0">
+    There are no products in your shopping cart.
+    <a href="#/products" class="alert-link">Click here to return to the catalogue</a>
+  </div>
+  <div ng-hide="cartData.length == 0">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Quantity</th>
+          <th>Item</th>
+          <th class="text-right">Price</th>
+          <th class="text-right">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="cat in cartData">
+          <td class="text-center">{{cat.count}}</td>
+          <td class="text-left">{{cat.name}}</td>
+          <td class="text-right">{{cat.worth| currency}}</td>
+          <td class="text-right">{{(cat.worth * cat.count) | currency}}</td>
+          <td>
+            <button ng-click="remove(cat.id)" class="btn btn-sm btn-warning">remove</button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="text-right">Total:</td>
+          <td class="text-right">
+            {{total() | currency}}
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="text-center">
+      <a class="btn btn-primary" href="#/products">continue shopping</a>
+      <a class="btn btn-primary" href="#/placeorder">place order now</a>
+    </div>
+  </div>
 </div>
-<a href="#/cats" class="btn btn-primary">back</a>
