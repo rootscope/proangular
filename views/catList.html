@@ -20,6 +20,10 @@
           {{cat.worth | currency}}
         </span>
       </h3>
+      <button ng-click="addProductToCart(item)"
+              class="btn btn-success pull-right">
+        Add to cart
+      </button>  
       <span class="lead">{{cat.desc}}</span>
     </div>
     <div class="pull-right btn-group">
