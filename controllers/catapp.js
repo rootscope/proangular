@@ -1,4 +1,4 @@
-angular.module("catApp", ["customFilters", "cart"])
+angular.module("catApp", ["customFilters", "cart", "ngRoute"])
 
 .constant("dataUrl", "http://localhost:5500/cats")
 
@@ -12,7 +12,7 @@ angular.module("catApp", ["customFilters", "cart"])
   $routeProvider.otherwise({
     templateUrl: "/views/catList.html"
   });
-});
+})
 
 .controller("catAppCtrl", function($scope, $http, dataUrl) {
   $scope.data = {};
