@@ -2,8 +2,8 @@ angular.module("catApp")
 .constant("catListActiveClass", "btn-primary")
 .constant("pageListActiveClass", "btn-primary")
 .constant("catListPageCount", 3)
-.controller("catListCtrl", function($scope, $filter,
-  catListActiveClass, pageListActiveClass, catListPageCount, cart){
+.controller("catListCtrl", function($scope, $filter, catListActiveClass, 
+    pageListActiveClass, catListPageCount, cart){
   var selectedCategory = null;
 
   $scope.selectedPage = 1;
@@ -31,7 +31,9 @@ angular.module("catApp")
   }
 
   $scope.addCatToCart = function(cat){
+    console.log("adding cat to cart...");
     cart.addCat(cat.id, cat.name, cat.worth);
+    console.log("added cat!");
   }
 
 });

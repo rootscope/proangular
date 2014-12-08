@@ -4,6 +4,7 @@ angular.module("cart", [])
 
   return{
     addCat: function(id, name, worth){
+      console.log("inside add cat");
       var addedToExistingCat = false;
 
       for(var i = 0; i < cartData.length; i++){
@@ -40,12 +41,13 @@ angular.module("cart", [])
       $scope.total = function(){
         var total = 0;
         for(var i = 0; i < cartData.length; i++){
-          total += (cartData[i].price * cartData[i].count);
+          total += (cartData[i].worth * cartData[i].count);
         }
+        console.log(total);
         return total;
       }
 
-      $scope.itemCount = function(){
+      $scope.catCount = function(){
         var total = 0;
         for(var i = 0; i < cartData.length; i++){
           total += cartData[i].count;
