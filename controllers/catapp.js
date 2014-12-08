@@ -1,4 +1,4 @@
-angular.module("catApp", ["customFilters"]);
+angular.module("catApp", ["customFilters", "cart"]);
 
 angular.module("catApp")
 .constant("dataUrl", "http://localhost:5500/cats")
