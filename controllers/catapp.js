@@ -1,6 +1,8 @@
 angular.module("catApp", ["customFilters", "cart", "ngRoute"])
+
 .constant("dataUrl", "http://localhost:5500/cats")
-.config(function($routeProvider) {
+
+.config(function($routeProvider){
   $routeProvider.when("/complete", {
     templateUrl: "/views/ty.html"
   });
