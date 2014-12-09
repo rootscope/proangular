@@ -6,7 +6,7 @@ angular.module("catApp", ["customFilters", "cart", "ngRoute"])
   $routeProvider.when("/complete", {
     templateUrl: "/views/ty.html"
   });
-  $routeProvider.when("placeorder", {
+  $routeProvider.when("/placeorder", {
     templateUrl: "/views/placeOrder.html"
   });
   $routeProvider.when("/checkout", {
