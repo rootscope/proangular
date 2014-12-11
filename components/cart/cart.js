@@ -26,7 +26,7 @@ angular.module("cart", [])
         }
       }
     },
-    getProducts: function(){
+    getCats: function(){
       return cartData;
     }
   }
