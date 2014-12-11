@@ -36,7 +36,7 @@ angular.module("cart", [])
     restrict: "E",
     templateUrl: "components/cart/cartSummary.html",
     controller: function($scope){
-      var cartData = cart.getProducts();
+      var cartData = cart.getCats();
 
       $scope.total = function(){
         var total = 0;

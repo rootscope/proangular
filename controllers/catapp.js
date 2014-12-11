@@ -32,7 +32,7 @@ angular.module("catApp", ["customFilters", "cart", "ngRoute"])
   $scope.sendOrder = function(shippingDetails){
     var order = angular.copy(shippingDetails);
     order.cats = cart.getCats();
-    $http.post(orderUrl, order).success(function(data)){
+    $http.post(orderUrl, order).success(function(data){
       $scope.data.orderId = data.id;
       cart.getCats().length = 0;
     })
