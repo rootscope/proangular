@@ -24,14 +24,51 @@
         a man needs a name
       </span>
     </div>
+
     <h3>address</h3>
     <div class="form-group">
-      <label>street Address</label>
-      <input name="street" class="form-control" ng-model="data.shipping.street" required />
-      <span class="error" ng-show="shippingForm.street.$error.required">
-        pls enter a street
+      <label>street address</label>
+        <input name="street" class="form-control" ng-model="data.shipping.street" required />
+        <span class="error" ng-show="shippingForm.street.$error.required">
+          pls enter a street
       </span>
     </div>
+    <div class="form-group">
+      <label>city</label>
+      <input name="city" class="form-control" ng-model="data.shipping.city" required />
+      <span class="error" ng-show="shippingForm.city.$error.required">
+        enter a city
+      </span>
+    </div>
+    <div class="form-group">
+      <label>State</label>
+      <input name="state" class="form-control" ng-model="data.shipping.state" required />
+      <span class="error" ng-show="shippingForm.state.$error.required">
+        enter a state
+      </span>
+    </div>
+    <div class="form-group">
+      <label>Zip</label>
+      <input name="zip" class="form-control" ng-model="data.shipping.zip" required />
+      <span class="error" ng-show="shippingForm.zip.$error.required">
+        enter a zip code
+      </span>
+    </div>
+    <div class="form-group">
+      <label>Country</label>
+      <input name="country" class="form-control" ng-model="data.shipping.country" required />
+      <span class="error" ng-show="shippingForm.country.$error.required">
+        enter a country
+      </span>
+    </div>
+
+    <h3>Options</h3>
+    <div class="checkbox">
+      <label>
+        <input name="giftwrap" type="checkbox" ng-model="data.shipping.giftwrap" /> gift wrap these items
+      </label>
+    </div>
+
     <div class="text-center">
       <button ng-disabled="shippingForm.$invalid" class="btn btn-primary">complete order</button>
     </div>
