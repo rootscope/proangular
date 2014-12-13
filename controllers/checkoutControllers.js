@@ -1,6 +1,6 @@
 angular.module("catApp")
 .controller("cartSummaryCtrl", function($scope, cart) {
-  $scope.cartData = cart.getProducts();
+  $scope.cartData = cart.getCats();
 
   $scope.total = function() {
     var total = 0;
