@@ -8,8 +8,10 @@ angular.module("catAppAdmin")
     }, {
       withCredentials: true
     }).success(function(data) {
+      console.log("success");
       $location.path("/main");
     }).error(function(error) {
+      console.log("error");
       $scope.authenticationError = error;
     });
   }
