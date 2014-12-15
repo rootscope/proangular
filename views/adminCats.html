@@ -1,3 +1,64 @@
-<div class="well">
-  admin cat view
+<style>
+#productTable {
+  width: auto;
+}
+#productTable td {
+  max-width: 150px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#productTable td input {
+  max-width: 125px;
+}
+</style>
+<div ng-controller="catCtrl">
+  <table id="catTable" class="table table-striped table-bordered">
+    <tr>
+      <th>name</th>
+      <th>description</th>
+      <th>category</th>
+      <th>price</th>
+      <th></th>
+    </tr>
+    <tr ng-repeat="cat in cats" ng-hide="cat.id == editedCat.id">
+      <td>{{cat.name}}</td>
+      <td class="description">{{cat.desc}}</td>
+      <td>{{cat.breed}}</td>
+      <td>{{cat.worth | currency}}</td>
+      <td>
+        <button ng-click="startEdit(cat)" class="btn btn-xs btn-primary">
+          edit
+        </button>
+        <button ng-click="deleteCat(cat)" class="btn btn-xs btn-primary">
+          delete
+        </button>
+      </td>
+    </tr>
+    <tr ng-class="{danger: editedCat}">
+      <td>
+        <input ng-model="editedCat.name" required />
+      </td>
+      <td>
+        <input ng-model="editedCat.desc" required />
+      </td>
+      <td>
+        <input ng-model="editedCat.breed" required />
+      </td>
+      <td>
+        <input ng-model="editedCat.worth" required />
+      </td>
+      <td>
+        <button ng-hide="editedCat.id" ng-click="createCat(editedCat)" class="btn btn-xs btn-primary">
+          create
+        </button>
+        <button ng-show="editedCat.id" ng-click="updateCat(editedCat)" class="btn btn-xs btn-primary">
+          save
+        </button>
+        <button ng-show="editedCat" ng-click="cancelEdit()" class="btn btn-xs btn-primary">
+          cancel
+        </button>
+      </td>
+    </tr>
+  </table>
 </div>

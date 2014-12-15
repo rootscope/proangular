@@ -3,7 +3,7 @@ angular.module("catAppAdmin")
 .config(function($httpProvider) {
   $httpProvider.defaults.withCredentials = true;
 })
-.controller("catCtrl", function($scope, $resource, productUrl) {
+.controller("catCtrl", function($scope, $resource, catUrl) {
   $scope.catsResource = $resource(catUrl + ":id", {
     id: "@id"
   });
