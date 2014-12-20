@@ -7,4 +7,11 @@ angular.module("exApp", [])
 .controller("tomorrowCtrl", function($scope){
   var days = ["sun","mon","tue","wed","thu","fri","sat"];
   $scope.day = days[(new Date().getDay() + 1) % 7];
+})
+.directive("highlight", function(){
+  return function(scope, element, attrs){
+    if(scope.day == attrs["highlight"]){
+      element.css("color", "red");
+    }
+  }
 });
