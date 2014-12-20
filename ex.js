@@ -14,4 +14,10 @@ angular.module("exApp", [])
       element.css("color", "red");
     }
   }
+})
+.filter("dayName", function (){
+  var days = ["sun","mon","tue","wed","thu","fri","sat"];
+  return function (input){
+    return angular.isNumber(input) ? dayNames[input] : input;
+  };
 });
