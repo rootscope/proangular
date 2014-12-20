@@ -10,7 +10,7 @@ angular.module("exApp", [])
 })
 .directive("highlight", function($filter){
   var dayFilter = $filter("dayName");
-  
+
   return function(scope, element, attrs){
     if(scope.day == attrs["highlight"]){
       element.css("color", "red");
@@ -22,4 +22,7 @@ angular.module("exApp", [])
   return function (input){
     return angular.isNumber(input) ? dayNames[input] : input;
   };
+})
+.service("days", function(){
+
 });
