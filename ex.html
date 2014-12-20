@@ -12,8 +12,8 @@
     <div class="page-header">
       <h3>angularjs app</h3>
     </div>
-    <h4 ng-controller="dayCtrl" highlight="fri">today: {{day || "dunno"}}</h4>
-    <h4 ng-controller="tomorrowCtrl">tommorow: {{tomorrow || "dunno"}}</h4>
+    <h4 ng-controller="dayCtrl" highlight="fri">today: {{day || "dunno" || dayName}}</h4>
+    <h4 ng-controller="tomorrowCtrl">tommorow: {{tomorrow || "dunno" || dayName}}</h4>
   </div>
 
   <script src="libs/angular.js"></script>
