@@ -8,12 +8,12 @@
 </head>
 
 <body>
-  <div class="panel" ng-controller="dayCtrl">
+  <div class="panel">
     <div class="page-header">
       <h3>angularjs app</h3>
     </div>
-    <h4>today: {{day || "dunno"}}</h4>
-    <h4>tommorow: {{tomorrow || "dunno"}}</h4>
+    <h4 ng-controller="dayCtrl">today: {{day || "dunno"}}</h4>
+    <h4 ng-controller="tomorrowCtrl">tommorow: {{tomorrow || "dunno"}}</h4>
   </div>
 
   <script src="libs/angular.js"></script>
