@@ -6,7 +6,7 @@ angular.module("exApp", [])
 })
 .controller("tomorrowCtrl", function($scope){
   var days = ["sun","mon","tue","wed","thu","fri","sat"];
-  $scope.day = days[(new Date().getDay() + 1) % 7];
+  $scope.tomorrow = days[(new Date().getDay() + 1) % 7];
 })
 .directive("highlight", function($filter){
   var dayFilter = $filter("dayName");
@@ -17,9 +17,9 @@ angular.module("exApp", [])
     }
   }
 })
-.filter("dayName", function (){
+.filter("dayName", function(){
   var days = ["sun","mon","tue","wed","thu","fri","sat"];
-  return function (input){
+  return function(input){
     return angular.isNumber(input) ? dayNames[input] : input;
   };
 })
